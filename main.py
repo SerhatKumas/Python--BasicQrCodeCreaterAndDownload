@@ -1,16 +1,26 @@
-# This is a sample Python script.
+# This is a simple Qr Code creator and downloader
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+#Import required library
+import qrcode
 
 
-# Press the green button in the gutter to run the script.
+def generate(qr_url, image_name):
+
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
+
+    qr.add_data(qr_url)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")
+    img.save(image_name.strip()+".jpg")
+
+
+#Code Runner
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    qr_url = input("Enter url that you want to embed in qr code : ")
+    image_name = input("Enter image name that you want to save qr code : ")
+    generate(qr_url, image_name);
