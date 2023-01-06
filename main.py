@@ -5,7 +5,7 @@ import qrcode
 
 
 def generate(qr_url, image_name):
-    #
+    #Creation of Qr Code
     qr = qrcode.QRCode(
         # The size of the QR Code
         version=1,
