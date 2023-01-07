@@ -2,7 +2,7 @@
 
 - It is basic qr code creater
 - Takes 2 parameter which are url that you want to embed in qr code and image name that you want to save qr code image as
-- It saves image automaticly after you given two parameters from console
+- It saves image automatically after you given two parameters from console
 
 ## Technologies
 
